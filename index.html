@@ -8,7 +8,7 @@
     <meta name="description" content="Vixto Modern Personal Blog HTML5 Template">
     <meta name="author" content="DynamicLayers">
 
-    <title>Vixto | Modern Personal Blog HTML5 Template</title>
+    <title>Job For You</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -16,16 +16,8 @@
     <link rel="stylesheet" href="assets/css/venobox.min.css">
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-   
 </head>
-
 <body>
-
- 
-
-    
-
-    
     
     <section class="contact-section padding">
         <div class="map-pattern"></div>
@@ -60,7 +52,6 @@
                                     <button id="submit" class="default-btn text-anim" type="submit" data-text="Submit">Submit</button>
                                 </div>
                             </div>
-                            <div id="form-messages" class="alert" role="alert"></div>
                         </form>
                     </div>
                 </div>
@@ -68,7 +59,6 @@
         </div>
     </section>
     <!--/.contact-section-->
-    
     
 
     <div id="scrollup">
@@ -105,7 +95,10 @@
     <script src="assets/js/vendor/smooth-scroll.js"></script>
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/mailchimp.js"></script>
+    <script src="assets/js/ajax.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -132,8 +125,17 @@
                 }, "Lxc2wCK009tg4yCU0")
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
+                    Swal.fire({
+                        title: "our team will contact you shortly",
+                        icon: "success"
+                    });
                 }, function(error) {
                     console.log('FAILED...', error);
+                    Swal.fire({
+                        title: "Oops!",
+                        text: "Something went wrong!",
+                        icon: "error"
+                    });
                 });
             });
         });
