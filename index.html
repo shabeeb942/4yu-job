@@ -124,11 +124,13 @@
                     message: message
                 }, "Lxc2wCK009tg4yCU0")
                 .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    Swal.fire({
-                        title: "our team will contact you shortly",
-                        icon: "success"
-                    });
+                console.log('SUCCESS!', response.status, response.text);
+                Swal.fire({
+                    title: "Our team will contact you shortly",
+                    icon: "success"
+                }).then(function() {
+                    location.reload(); // Reload the page after success message
+                });
                 }, function(error) {
                     console.log('FAILED...', error);
                     Swal.fire({
